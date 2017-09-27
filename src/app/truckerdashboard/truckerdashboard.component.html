@@ -1,0 +1,95 @@
+<div class="jumbotron">
+ <h2>  Welcome  to your dashboard !!  </h2>
+ <hr>
+
+     <div class="wrapper">
+      <a [routerLink]="['/truckerdashboard',{outlets:{taj:['truckeravailablejobs']}}]">
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit"
+          style="margin-right: 5px;width: 100%;font-size: 35px;font-weight:900;"> See Available Jobs
+      </button></a> 
+     </div>
+
+  <router-outlet name="taj"> </router-outlet>   
+
+      <div class="wrapper">
+      <a [routerLink]="['/truckerdashboard',{outlets:{tja:['truckerjobapplication']}}]">  
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit"
+          style="margin-right: 5px;width: 100%;font-size: 35px;font-weight:900">Your Job Application
+      </button> </a>
+     </div>
+
+  <router-outlet name="tja"> </router-outlet>   
+
+     <div class="wrapper">
+      <a [routerLink]="['/truckerdashboard',{outlets:{tpp:['truckerpersonalprofile']}}]">    
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit"
+          style="margin-right: 5px;width: 100%;font-size: 35px;font-weight:900">Your Personal Profile
+      </button> </a>
+     </div>
+
+  <router-outlet name="tpp"> </router-outlet>  
+
+      <div class="wrapper">
+       <a [routerLink]="['/truckerdashboard',{outlets:{tpup:['truckerpublicprofile']}}]">    
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit"
+          style="margin-right: 5px;width: 100%;font-size: 35px;font-weight:900">Your Public Profile
+      </button></a> 
+     </div>
+
+<router-outlet name="tpup"> </router-outlet>     
+
+     <div class="wrapper">
+     <a [routerLink]="['/truckerdashboard',{outlets:{tawj:['truckerawardedjobs']}}]">    
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit"
+          style="margin-right: 5px;width: 100%;font-size: 35px;font-weight:900">See Awarded Jobs
+      </button> </a>
+     </div>
+
+<router-outlet name="tawj"> </router-outlet>        
+
+      <div class="wrapper">
+      <a [routerLink]="['/truckerdashboard',{outlets:{tcj:['truckercompletedjobs']}}]">    
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit"
+          style="margin-right: 5px;width: 100%;font-size: 35px;font-weight:900">See Completed Jobs
+      </button> </a>
+     </div>
+
+<router-outlet name="tcj"> </router-outlet>      
+
+     <div class="wrapper">
+      <a [routerLink]="['/truckerdashboard',{outlets:{tus:['truckerunitstatus']}}]">    
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit"
+          style="margin-right: 5px;width: 100%;font-size: 35px;font-weight:900">Load Unit Status
+      </button> </a>
+     </div>
+
+<router-outlet name="tus"> </router-outlet>      
+
+     <div class="wrapper">
+       <a [routerLink]="['/truckerdashboard',{outlets:{tds:['truckerdistancetravelledstatus']}}]">   
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit"
+          style="margin-right: 5px;width: 100%;font-size: 30px;font-weight:900">Distance Travelled Status
+      </button> </a>
+     </div>
+
+<router-outlet name="tds"> </router-outlet>      
+
+     <div class="wrapper">
+        <a [routerLink]="['/truckerdashboard',{outlets:{tes:['truckerearningstatus']}}]"> 
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit"
+          style="margin-right: 5px;width: 100%;font-size: 35px;font-weight:900">See Earnings Status
+      </button> </a>
+     </div>
+
+ <router-outlet name="tes"> </router-outlet>      
+
+      <div class="wrapper">
+       <a [routerLink]="['/truckerdashboard',{outlets:{trs:['truckerrecommendationstatus']}}]">     
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit"
+          style="margin-right: 5px;width: 100%;font-size: 30px;font-weight:900">See Recommended Status
+      </button> </a>
+     </div>
+
+  <router-outlet name="trs"></router-outlet>
+
+</div>  

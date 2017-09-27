@@ -1,0 +1,35 @@
+h2{text-align: center;color: orangered;font-weight: 800}
+
+
+.wrapper{text-align: center;width: 100%}
+
+.form-container{
+  
+    width: 100%;
+   
+   
+  
+}
+
+.form-control{
+    width: 100%
+}
+
+.alert{
+    background:#ff8a80 ;
+    padding: 7px;
+    font-size: .9em;
+    margin-bottom: 20px;
+    animation: 2s alertAnim forwards;
+}
+
+.button{
+    margin-top: 3rem;
+}
+
+h1{
+    margin-bottom: 2rem;
+    font-weight: bold;
+
+}
+

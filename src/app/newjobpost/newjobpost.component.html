@@ -1,0 +1,121 @@
+<div class="jumbotron">
+  <div class="con">
+    <h1 style="text-align: center; color: orangered;"><i class="fa fa-truck" aria-hidden="true" style="text-align: center"></i> Welcome !! Post Your New Job Details </h1>
+  </div>
+  <hr>
+
+
+  <form [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)">
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="form-group" [ngClass]="{'has-error':!complexForm.controls['title'].valid && complexForm.controls['title'].touched}">
+          <label><strong>Title</strong></label>
+          <input class="form-control" type="text" placeholder="Title of your Job" [formControl]="complexForm.controls['title']">
+          <!-- The hasError method will tell us if a particular error exists -->
+          <div *ngIf="  complexForm.controls['title'].touched  && complexForm.controls['title'].hasError('required') " class="alert alert-danger">You must include Job Title.</div>
+        </div>
+
+
+        <div class="form-group" [ngClass]="{'has-error':!complexForm.controls['description'].valid && complexForm.controls['description'].touched}">
+          <label><strong>Description</strong></label>
+          <input class="form-control" type="text" placeholder="Description of your Job" [formControl]="complexForm.controls['description']">
+          <div *ngIf="complexForm.controls['description'].hasError('required') && complexForm.controls['description'].touched" class="alert alert-danger">You must include Job Description.</div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error':!complexForm.controls['budget'].valid && complexForm.controls['budget'].touched}">
+          <label><strong>Estimated Budget ($)</strong></label>
+
+          <input class="form-control" type="number" placeholder="Budget of your Job in USD" [formControl]="complexForm.controls['budget']">
+
+          <div *ngIf="complexForm.controls['budget'].hasError('required') && complexForm.controls['budget'].touched" class="alert alert-danger">You must include Budget.</div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error':!complexForm.controls['time'].valid && complexForm.controls['time'].touched}">
+          <label><strong>Estimated Time (Hours)</strong></label>
+          <input class="form-control" type="number" placeholder="Your Estimated Time" [formControl]="complexForm.controls['time']">
+          <div *ngIf="complexForm.controls['time'].hasError('required') && complexForm.controls['time'].touched" class="alert alert-danger">You must include Estimated Time.</div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error':!complexForm.controls['load'].valid && complexForm.controls['load'].touched}">
+          <label><strong>Load Type</strong></label>
+          <!--<input class="form-control" type="text" placeholder="Load Type" [formControl]="complexForm.controls['load']">-->
+          <select class="form-control" formControlName="load" style="width:450px;" [formControl]="complexForm.controls['load']">
+                        <option *ngFor="let load of loads" [value]="load">{{load}}</option>
+                    </select>
+          <div *ngIf="complexForm.controls['load'].hasError('required') && complexForm.controls['load'].touched" class="alert alert-danger">You must include Load Type.</div>
+        </div>
+
+
+        <div class="form-group" [ngClass]="{'has-error':!complexForm.controls['weight'].valid && complexForm.controls['weight'].touched}">
+          <label><strong>Load Weight (MT)</strong></label>
+
+          <select class="form-control" formControlName="load" style="width:450px;" [formControl]="complexForm.controls['weight']">
+                        <option *ngFor="let weight of weights" [value]="load">{{weight}}</option>
+                    </select>
+          <div *ngIf="complexForm.controls['weight'].hasError('required') && complexForm.controls['weight'].touched" class="alert alert-danger">You must include Load Weight.</div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+
+        <div class="form-group" [ngClass]="{'has-error':!complexForm.controls['pick'].valid && complexForm.controls['pick'].touched}">
+          <label><strong>Pick Up Location</strong></label>
+          <input class="form-control" type="text" placeholder="Enter PickUp Location" [formControl]="complexForm.controls['pick']">
+          <div *ngIf="complexForm.controls['pick'].hasError('required') && complexForm.controls['pick'].touched" class="alert alert-danger">You must include PickUp Location.</div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error':!complexForm.controls['drop'].valid && complexForm.controls['drop'].touched}">
+          <label><strong>Drop Location</strong></label>
+          <input class="form-control" type="text" placeholder="Enter Drop Location" [formControl]="complexForm.controls['drop']">
+          <div *ngIf="complexForm.controls['drop'].hasError('required') && complexForm.controls['drop'].touched" class="alert alert-danger">You must include Drop Location.</div>
+        </div>
+
+
+        <div class="form-group" [ngClass]="{'has-error':!complexForm.controls['startdate'].valid && complexForm.controls['startdate'].touched}">
+          <label><strong>Expected Job Start Date</strong></label>
+          <input class="form-control" type="date" placeholder="DD/MM/YYYY" [formControl]="complexForm.controls['startdate']">
+          <div *ngIf="complexForm.controls['startdate'].hasError('required') && complexForm.controls['startdate'].touched" class="alert alert-danger">You must include Start Job Date.</div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error':!complexForm.controls['enddate'].valid && complexForm.controls['enddate'].touched}">
+          <label><strong>Expected Job Stop Date</strong></label>
+          <input class="form-control" type="date" placeholder="DD/MM/YYYY" [formControl]="complexForm.controls['enddate']">
+          <div *ngIf="complexForm.controls['enddate'].hasError('required') && complexForm.controls['enddate'].touched" class="alert alert-danger">You must include End Job Date.</div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error':!complexForm.controls['trucktype'].valid && complexForm.controls['trucktype'].touched}">
+          <label><strong>Truck Type</strong></label>
+          <select class="form-control" formControlName="load" style="width:450px;" [formControl]="complexForm.controls['trucktype']">
+                        <option *ngFor="let type of types" [value]="load">{{type}}</option>
+                    </select>
+          <div *ngIf="complexForm.controls['trucktype'].hasError('required') && complexForm.controls['trucktype'].touched" class="alert alert-danger">You must include truck type</div>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error':!complexForm.controls['truckrequired'].valid && complexForm.controls['truckrequired'].touched}">
+          <label><strong> Number Of Trucks</strong></label>
+          <select class="form-control" formControlName="load" style="width:450px;" [formControl]="complexForm.controls['truckrequired']">
+                        <option *ngFor="let state of states" [value]="load">{{state}}</option>
+                    </select>
+          <div *ngIf="complexForm.controls['truckrequired'].hasError('required') && complexForm.controls['truckrequired'].touched"
+            class="alert alert-danger">You must select No of trucks</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="wrapper" style="text-align: center; padding-bottom: 5px;">
+      <button type="submit" class="btn btn-outline-info my-2 my-sm-0" style="text-align: center;" routerLink="/jbthankyou" [disabled]="!complexForm.valid">Submit
+                </button>
+
+
+
+      <button type="submit" class="btn btn-outline-info my-2 my-sm-0" style="text-align: center;" routerLink="/condashboard" data-dismiss="modal">Close
+                </button>
+
+    </div>
+
+  </form>
+
+</div>
+
